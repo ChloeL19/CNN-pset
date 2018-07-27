@@ -1,1 +1,4 @@
 EMNIST data
+
+The file is actually too large to upload to Github. Would it be possible to use a wget statement to get the data from 
+this site? https://www.nist.gov/itl/iad/image-group/emnist-dataset
