@@ -1,6 +1,4 @@
-# Computer Vision Problem Set
-
-## Setting up in your Cloud9 workspace
+# Setting up in your Cloud9 workspace
 
 Note: Make sure your workspace is resized to at least 5 GB of disk space and 1 GB of memory.
 Total disk space taken up by these downloads: 3.1GB
