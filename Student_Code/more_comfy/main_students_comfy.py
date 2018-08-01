@@ -6,7 +6,6 @@ Created on Wed Jul 25 18:24:50 2018
 @author: chloeloughridge
 """
 
-# FOR STUDENTS TO COMPLETE
 # This is where training, testing, and visualizing the model will take place
 
 # MORE COMFY VERSION
@@ -15,12 +14,12 @@ Created on Wed Jul 25 18:24:50 2018
 import keras
 import os
 # import our helper files
-from model_architecture_staff import *
-from visualization_staff import *
-from custom_prediction_staff import *
-from CIFAR_preprocessing_staff import *
-from MNIST_preprocessing_staff import *
-from EMNIST_preprocessing_staff import *
+from model_architecture_students_comfy import *
+from visualization import *
+from custom_prediction_students import *
+from CIFAR_preprocessing_students import *
+from MNIST_preprocessing_students import *
+from EMNIST_preprocessing import *
 # for using tensorboard
 from tensorboard_utils import *
 import signal, subprocess
