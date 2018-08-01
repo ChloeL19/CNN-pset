@@ -1,3 +1,6 @@
 This folder contains student code for folks feeling a bit more comfy with the material.
 
 Currently, the major difference is that this version interfaces with tensorboard.
+
+For downloading all of the files in this directory:
+wget https://raw.githubusercontent.com/ChloeL19/CNN-pset/master/Student_Code/more_comfy/more_comfy.zip
