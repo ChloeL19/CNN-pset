@@ -1,4 +1,4 @@
-# CNN-pset
+# Computer Vision Problem Set
 
 ## Setting up in your Cloud9 workspace
 
