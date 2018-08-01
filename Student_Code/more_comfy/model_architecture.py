@@ -6,7 +6,8 @@ Created on Tue Jul 24 12:15:52 2018
 @author: chloeloughridge
 """
 
-# FOR STUDENTS
+# NEEDS TO BE COMPLETED
+
 # MORE COMFY VERSION
 
 # This is a file for constructing the model's architecture and its tensorboard object
@@ -22,7 +23,7 @@ def create_model(pic_width, pic_height, color_channels, num_classes, run_version
     
    
     
-    #TODO: DESIGN MODEL'S ARCHITECTURE
+    #TODO: DESIGN THE MODEL'S ARCHITECTURE
     
     
     
