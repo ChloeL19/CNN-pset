@@ -211,7 +211,7 @@ If it’s helpful to see the functionality we’re after, please execute one of 
 
 python ./staff_solution.py
 
-Python ./staff_solution_comfy.py
+python ./staff_solution_comfy.py
 
 ## How to submit
 TBD
