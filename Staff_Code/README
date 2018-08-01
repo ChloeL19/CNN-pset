@@ -1,5 +1,8 @@
 The epic staff code!
 
+FOR DOWNLOADING INTO C9:
+More comfy version: 
+
 The folders with c9 in front are designed to work in the c9 environment.
 
 The folders without this prefix will generate errors in c9, but will work nicely if you have something like the Spyder IDE
