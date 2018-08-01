@@ -24,7 +24,7 @@ Machine learning projects generally follow these core steps, which you’ll be i
 
 
 ## Setting Up 
-NOTE: Please follow these instructions for now: https://github.com/ChloeL19/CNN-pset 
+### NOTE: Please follow these instructions for now: https://github.com/ChloeL19/CNN-pset 
 
 To start, open a terminal window and execute “update50” to make sure your workspace is up-to-date.
 
