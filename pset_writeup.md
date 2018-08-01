@@ -42,13 +42,13 @@ If you’re feeling more comfy.
 
 Then unzip that ZIP file, delete it, and navigate into your newly-created directory. If you list the contents of your directory, you should find seven files therein. The files in bold are the ones you will edit:
 
-MNIST_preprocessing.py
-EMNIST_preprocessing.py
-CIFAR_preprocessing.py
-model_architecture.py
-main.py
-custom_prediction.py
-visualization.py
+* MNIST_preprocessing.py
+* EMNIST_preprocessing.py
+* CIFAR_preprocessing.py
+* model_architecture.py
+* main.py
+* custom_prediction.py
+* visualization.py
 
 ## First Challenge: Preprocess the MNIST data
 As a data scientist, a vital part of the job is to feed your model clean and useful data. Your first challenge: prep your data properly. 
@@ -210,6 +210,7 @@ After loading your data, it’s time to iteratively improve your model until it 
 If it’s helpful to see the functionality we’re after, please execute one of the following in the command line:
 
 python ./staff_solution.py
+
 Python ./staff_solution_comfy.py
 
 ## How to submit
