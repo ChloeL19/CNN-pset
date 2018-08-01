@@ -55,10 +55,10 @@ As a data scientist, a vital part of the job is to feed your model clean and use
 
 Take a look in the “MNIST_preprocessing_students.py” file, where we’ve called the mnist.load_data() function to create four arrays of values:
 
-X_train: This is an array of 60,000 training examples. Each training example contains pixel values ranging from 0-255 for a black-and-white image of a handwritten number. 
-Y_train: This is an array of labels for each of the 60,000 images in the X training dataset. Each label is an integer from 0-9 that corresponds to the number pictured. 
-X_test: This is an array of 10,000 testing examples with the same format as in X_train.
-Y_test: This is an array of 10,000 labels for the X_test dataset. (It has the same format as the Y_train array.)
+* X_train: This is an array of 60,000 training examples. Each training example contains pixel values ranging from 0-255 for a black-and-white image of a handwritten number. 
+* Y_train: This is an array of labels for each of the 60,000 images in the X training dataset. Each label is an integer from 0-9 that corresponds to the number pictured. 
+* X_test: This is an array of 10,000 testing examples with the same format as in X_train.
+* Y_test: This is an array of 10,000 labels for the X_test dataset. (It has the same format as the Y_train array.)
 
 Here’s the breakdown of what you need to do in this file:
 
