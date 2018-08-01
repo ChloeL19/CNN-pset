@@ -6,7 +6,7 @@ Created on Tue Jul 24 11:56:47 2018
 @author: chloeloughridge
 """
 
-# FOR STUDENTS
+# NEEDS TO BE COMPLETED
 # This file is for uploading and preprocessing the cifar10 dataset
 
 # first, let's import keras
