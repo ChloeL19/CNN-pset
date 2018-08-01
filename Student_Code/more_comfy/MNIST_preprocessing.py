@@ -6,7 +6,9 @@ Created on Tue Jul 24 11:08:41 2018
 @author: chloeloughridge
 """
 
-#FOR STUDENTS
+# MORE COMFY VERSION
+
+# NEEDS TO BE COMPLETED
 # This file is for uploading and preprocessing the mnist dataset
 
 # first, let's import keras
