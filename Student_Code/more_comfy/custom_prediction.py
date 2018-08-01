@@ -6,7 +6,9 @@ Created on Tue Jul 24 16:20:45 2018
 @author: chloeloughridge
 """
 
-# FOR STUDENTS
+# MORE COMFY VERSION
+
+# NEEDS TO BE COMPLETED
 
 # this file contains the functions needed for making a prediction on a
 # custom image
