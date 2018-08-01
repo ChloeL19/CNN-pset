@@ -5,10 +5,7 @@ Created on Tue Jul 24 13:56:04 2018
 
 @author: chloeloughridge
 """
-
-# The file where training, testing, and visualizing the model takes place
-# perhaps this can become staff example implementation code later on
-
+# STAFF SOLUTION
 # MORE COMFY VERSION
 
 # for starting within ipython console: exec(open("main_staff_comfy.py").read())
