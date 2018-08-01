@@ -14,12 +14,12 @@ Created on Wed Jul 25 18:24:50 2018
 import keras
 import os
 # import our helper files
-from model_architecture_staff import *
-from visualization_staff import *
-from custom_prediction_staff import *
-from CIFAR_preprocessing_staff import *
-from MNIST_preprocessing_staff import *
-from EMNIST_preprocessing_staff import *
+from model_architecture import *
+from visualization import *
+from custom_prediction import *
+from CIFAR_preprocessing import *
+from MNIST_preprocessing import *
+from EMNIST_preprocessing import *
 # for saving training history
 import pickle
 
