@@ -42,12 +42,12 @@ If you’re feeling more comfy.
 
 Then unzip that ZIP file, delete it, and navigate into your newly-created directory. If you list the contents of your directory, you should find seven files therein. The files in bold are the ones you will edit:
 
-* MNIST_preprocessing.py
+* #### MNIST_preprocessing.py
 * EMNIST_preprocessing.py
-* CIFAR_preprocessing.py
-* model_architecture.py
-* main.py
-* custom_prediction.py
+* #### CIFAR_preprocessing.py
+* #### model_architecture.py
+* #### main.py
+* #### custom_prediction.py
 * visualization.py
 
 ## First Challenge: Preprocess the MNIST data
