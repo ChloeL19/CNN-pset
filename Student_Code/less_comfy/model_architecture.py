@@ -6,8 +6,7 @@ Created on Tue Jul 24 12:15:52 2018
 @author: chloeloughridge
 """
 
-# FOR STUDENTS
-# LESS COMFY VERSION
+# NEEDS TO BE COMPLETED
 
 # This is a file for constructing the model's architecture
 
