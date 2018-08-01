@@ -6,7 +6,7 @@ Created on Tue Jul 24 11:26:59 2018
 @author: chloeloughridge
 """
 
-# STAFF CODE
+# THE STAFF HAS WRITTEN THESE FUNCTIONS FOR YOUR CONVENIENCE
 # keras doesn't have this dataset loaded, so we wrote some upload code for students
 
 # our libraries
