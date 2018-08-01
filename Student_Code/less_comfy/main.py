@@ -6,10 +6,9 @@ Created on Wed Jul 25 18:24:50 2018
 @author: chloeloughridge
 """
 
-# FOR STUDENTS TO COMPLETE
-# This is where training, testing, and visualizing the model will take place
+# NEEDS TO BE COMPLETED
 
-# LESS COMFY VERSION
+# This is where training, testing, and visualizing the model will take place
 
 # import keras library
 import keras
