@@ -10,6 +10,8 @@ Created on Wed Jul 25 18:24:50 2018
 
 # MORE COMFY VERSION
 
+# NEEDS TO BE COMPLETED
+
 # import keras library
 import keras
 import os
