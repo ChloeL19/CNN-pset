@@ -16,11 +16,11 @@ Created on Wed Jul 25 18:24:50 2018
 import keras
 import os
 # import our helper files
-from model_architecture_students_comfy import *
+from model_architecture import *
 from visualization import *
-from custom_prediction_students import *
-from CIFAR_preprocessing_students import *
-from MNIST_preprocessing_students import *
+from custom_prediction import *
+from CIFAR_preprocessing import *
+from MNIST_preprocessing import *
 from EMNIST_preprocessing import *
 # for using tensorboard
 from tensorboard_utils import *
