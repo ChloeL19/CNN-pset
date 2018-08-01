@@ -30,7 +30,7 @@ To start, open a terminal window and execute “update50” to make sure your wo
 
 Next, navigate to your ~/workspace/chapter[IDK] directory. To download the distro code, execute either:
 
-Wget https://raw.githubusercontent.com/ChloeL19/CNN-pset/master/Student_Code/c9_less_comfy/less_comfy.zip
+wget https://raw.githubusercontent.com/ChloeL19/CNN-pset/master/Student_Code/c9_less_comfy/less_comfy.zip
 
 If you’re feeling a bit less comfy.
 
