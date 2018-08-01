@@ -6,7 +6,7 @@ Created on Tue Jul 24 14:38:20 2018
 @author: chloeloughridge
 """
 
-# FOR STAFF ONLY
+# THE STAFF HAS WRITTEN THESE FUNCTIONS FOR YOUR CONVENIENCE
 
 # first, import libraries
 import matplotlib.pyplot as plt
