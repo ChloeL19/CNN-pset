@@ -1,7 +1,7 @@
 # Title: Machine Vision!
 ## TL;DR: Build a series of convolutional neural networks that classify numbers, letters, and objects.
 ## What is Machine Learning?
-Machine learning (a type of artificial intelligence or AI) is a set of algorithms that learn to do tasks without being explicitly programmed. In this problem set, you will create the building blocks for your own convolutional neural network, a type of machine learning model that’s great for machine vision. You can then apply your model (with some tweaking) in new ways you dream up. 
+Machine learning (a type of artificial intelligence or AI) is a set of algorithms that learn to do tasks without being explicitly programmed. In this problem set, you will create the building blocks for your own convolutional neural network, a type of machine learning model that’s based on the biology of human vision and handy for enabling computers to “recognize” images (machine vision). You can then apply your model (with some tweaking) in new ways you dream up. 
 
 Okay, but what are some examples of how machine learning plays a role in our lives?
 
@@ -21,10 +21,11 @@ Machine learning projects generally follow these core steps, which you’ll be i
 2. Engineer your model’s architecture.
 3. Train your model on your data and evaluate its performance.
 4. Iterate to improve the performance of your model.
+5. Apply your model to your own data!
 
 
 ## Setting Up 
-### NOTE: Please follow these instructions for now: https://github.com/ChloeL19/CNN-pset/blob/master/getting_started.md 
+### NOTE: Please follow these instructions for now: https://bit.ly/2Km6RPs
 
 To start, open a terminal window and execute “update50” to make sure your workspace is up-to-date.
 
@@ -53,19 +54,21 @@ Then unzip that ZIP file, delete it, and navigate into your newly-created direct
 ## First Challenge: Preprocess the MNIST data
 As a data scientist, a vital part of the job is to feed your model clean and useful data. Your first challenge: prep your data properly. 
 
+The MNIST dataset contains 70,000 images of handwritten numbers. We want our network to take the pixel values of each image as input, and then output the probability that the number represented by the pixel data is a 1, 2, 3, etc. In order to help our model can train efficiently with this data, we need to ensure the arrays of pixel values representing each image are of the appropriate shape and magnitude. 
+
 Take a look in the “MNIST_preprocessing_students.py” file, where we’ve called the mnist.load_data() function to create four arrays of values:
 
-* X_train: This is an array of 60,000 training examples. Each training example contains pixel values ranging from 0-255 for a black-and-white image of a handwritten number. 
+* X_train: This is an array of 60,000 training examples, which represents about 85% of the total dataset (usually 80-90% of the dataset is devoted to training the model). Why 60,000? Well, typically we want enough data so that the model can learn to pick up helpful patterns, but not so much that the training process become unwieldy. Each training example contains pixel values ranging from 0-255 for a black-and-white image of a handwritten number.
 * Y_train: This is an array of labels for each of the 60,000 images in the X training dataset. Each label is an integer from 0-9 that corresponds to the number pictured. 
-* X_test: This is an array of 10,000 testing examples with the same format as in X_train.
+* X_test: This is an array of 10,000 testing examples with the same format as in X_train. This set of data is used to see how well the model performs at classifying images of numbers it has never seen before.
 * Y_test: This is an array of 10,000 labels for the X_test dataset. (It has the same format as the Y_train array.)
 
 Here’s the breakdown of what you need to do in this file:
 
-* Ensure the X_train and X_test data have the right shape so that the convolutional neural network can easily read the input images as a giant array of pixel values. Here’s the shape you need: [number of examples, image width, image height, number of color channels]
+* Ensure the X_train and X_test arrays have the right formats so that the convolutional neural network can easily read the input images as a giant array of pixel values. Currently, the X_train data is represented as an array of shape (60000, 28, 28), and the shape of the X_test array is (10000, 28, 28). This makes sense, because X_train is storing the pixel values of 60,000 images with a height and width of 28 pixels (and X_test is similarly storing the values for 10,000 images). The convolutional neural network, however, needs each image in the dataset to have three dimensions: height, width, and color channels. Since MNIST images are strictly black and white, you need to insert another dimension so that each image is stored as an array with these dimensions: (28, 28, 1). (As an aside, this scheme means that color images would be stored as arrays of shape: (28, 28, 3), since they have three color channels for red, green, and blue.)
 * “Normalize” the pixel values. This means you need to find a way to put these values in the range of 0 to 1 (they currently range from 0 to 255). By “smooshing” all of the training data into this scale, the neural network will learn more efficiently. 
 * If the verbose argument is set to “True”, print an example training image to the screen along with its label so we know exactly what type of data we’re dealing with here. 
-* Finally, you need to convert each entry in the Y_train and Y_test arrays into a one-hot vector. Why? We use a one-hot vector to enable our model to compare its output to the expected output. How? The row of numbers in the one-hot vector represent how likely the input image belongs in the given class: 0 if it doesn’t fit and 1 if it is a 100% fit. If, for example, we give the network an image of a “3”, we want the network to say the image has a close to 100% probability of being a 3. That means the vector would display 1  in the spot that represents the number “3”:
+* Finally, you need to convert each entry in the Y_train and Y_test arrays into a one-hot vector. A one-hot vector is a vector in which all of the elements are zero except for a single “1”. Why? We use a one-hot vector to enable our model to compare its output to the expected output. How? The row of numbers in the one-hot vector represent how likely the input image belongs in the given class: 0 if it doesn’t fit and 1 if it is a 100% fit. If, for example, we give the network an image of a “3”, we want the network to say the image has a close to 100% probability of being a 3. That means the vector would display 1  in the spot that represents the number “3”:
   
 (Note: arrays are indexed from “0” hence the index representing “3” is in the fourth position)
 
@@ -80,7 +83,9 @@ https://www.youtube.com/watch?v=ISHGyvsT0QY
 
 To build your convolutional neural network, you will need to construct a stack of layers. A layer is a function that takes an input volume of data and converts it into a different output volume of data (remember the boxes from the video?). 
 
-You will be choosing and combining the following layers in different ways to build your model:
+You will be choosing and combining the following layers in different ways to build your model. You can use any combination of layers although some combinations will work better together than others. Later on, you'll get a chance to test how your model performs!
+
+Here are the layer options:
 
 * Input: This constructs an input layer for your neural network. It takes the shape of the input data as an argument. 
 * Conv2d: This is your classic convolutional layer for images. It contains filters (kernels) with learnable parameters that slide (convolve) over an input data matrix, computing the dot product with each chunk of the input matrix they go. Over time, these filters will learn to activate when they recognize certain visual patterns, like edges, blotches of color, or even entire honeycomb patterns (generally the patterns become more complex as you go deeper into the network). 
@@ -101,7 +106,7 @@ Navigate to the main.py file. You’ll see that we’ve called the compile() fun
 
 You need to fill in that argument with the optimizer you think will work best from among the following choices:
 
-* Adam Optimizer: the most recently developed optimizer, and generally considered state-of-the-art. This optimization is known for being computationally efficient, light in terms of memory requirements, and well suited to applications involving large amounts of data and parameters. If you’re in do[a]ubt, you should probably just use this one.
+* Adam Optimizer: the most recently developed optimizer, and generally considered state-of-the-art. This optimization is known for being computationally efficient, light in terms of memory requirements, and well suited to applications involving large amounts of data and parameters. 
 * RMSprop: this is a slightly older optimizer, though it is similar to the Adam optimizer. One technical difference is that RMSprop does not include a bias-correction term like Adam, so in some circumstances it can take overly large step sizes as it descends the slopes of the optimization function.
 * Adagrad: this optimizer is good for dealing with sparse data (in which important features appear infrequently in the dataset, so not necessarily applicable to MNIST). It adjusts the parameters of infrequent features by larger amounts than it adjusts the parameters of frequently occurring features.
 * Adadelta: the adagrad learning rate (which has also been referred to as “step size”) radically diminishes--the Adadelta optimizer prevents this learning rate from decreasing too precipitously. 
@@ -116,8 +121,8 @@ This will be as easy as calling one Keras function in main.py: fit().
 
 However, you will still need to decide on a few key arguments:
 
-* Batch_size: how many training examples do you want to send through the model at once?
-* Epochs: how many times do you want to feed the entire training data set through the model?
+* Batch_size: how many training examples do you want to send through the model at once?Large batch sizes often speed up the training process, but they also take up more memory and computational power. What’s more, using batch sizes that are too large have been known to inhibit the performances of neural networks. [https://arxiv.org/abs/1609.04836] 
+* Epochs: how many times do you want to feed the entire training data set through the model? Accuracy results should improve each time you run through another epoch, but there is a point at which the improvements diminish. By graphing the error and accuracy of the network, it becomes easier to see whether training more will bring significant gains.
 
 We recommend also feeding the validation_data argument into the fit() function, so that you can see how the model performs on data its never seen before at every epoch. (You will want to set validation_data equal to the X_test and Y_test datasets.)
 
@@ -126,7 +131,11 @@ What’s the fun in creating and training this model if you can’t use it to re
 
 So let’s upload a custom image.  
 
-First, take a picture of a number that you handwrite. Make sure you write your number with thick lines, and preferably take a square picture of your finished product (this will help with scaling later). Then, upload this image to the C9 workspace, and name it something like “my_img.jpg”. 
+First, take a picture of a number that you handwrite. First, take a picture of a number that you handwrite. Make sure you write your number with thick lines, and since all of the images in the MNIST data set are squares, be sure that your image is also a square. Then, upload this image to the C9 workspace, and name it something like “my_img.jpg”. 
+
+Here's an example:
+
+[insert example]
 
 Navigate to custom_prediction.py and write a function that does the following:
 
@@ -139,12 +148,12 @@ You may find the OpenCV library helpful for accomplishing some of these tasks.
 ## Challenge 6: Visualize in a vivid way what your model “sees”.
 Now that your model has been trained, you can actually visualize what the filters in your convolutional layers are “seeing”. 
 
-If you look in visualization.py, you’ll see that the CS50 staff has implemented some functions that enable you to do this. 
+If you look in visualization.py, you’ll see that the CS50 staff has implemented some functions that enable you to do this. These functions identify the patterns of pixels that are important to different layers in your model; in other words, they display the patterns that trigger the filters in your model to pass information forward to subsequent layers. The end result? A glimpse into how neural networks process the images they see. Different models will produce different visualizations, and chances are they won’t look like a “human” way of analyzing images! 
 
 Call these functions in main.py to crack open the “black box” of your model!
 
 ## Challenge 7: Improve your model
-Your goal on the MNIST dataset is to reach at least 99% validation accuracy.
+Your goal on the MNIST dataset is to reach at least 99% validation accuracy. Most models will reach 98% validation accuracy, and very few will get above 99.25% validation accuracy (“state of the art” is considered 99.7%).
 
 There are three key ways to improve your model’s accuracy, listed here in general order of efficacy:
 
