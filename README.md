@@ -135,7 +135,7 @@ First, take a picture of a number that you handwrite. First, take a picture of a
 
 Here's an example:
 
-![alt text](https://raw.githubusercontent.com/ChloeL19/CNN-pset/master/images/example_image.JPG)
+![alt text](https://raw.githubusercontent.com/ChloeL19/CNN-pset/master/images/example_image_2.jpg)
 
 Navigate to custom_prediction.py and write a function that does the following:
 
