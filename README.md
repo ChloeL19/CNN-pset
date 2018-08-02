@@ -79,7 +79,7 @@ You’re ready to build your first convolutional model in the model_architecture
 
 To better understand how convolutional models work, you may appreciate this quick video by one of the top scientists at the Google Brain Team:
 
-https://www.youtube.com/watch?v=ISHGyvsT0QY 
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/ISHGyvsT0QY/0.jpg)](https://www.youtube.com/watch?v=ISHGyvsT0QY) 
 
 To build your convolutional neural network, you will need to construct a stack of layers. A layer is a function that takes an input volume of data and converts it into a different output volume of data (remember the boxes from the video?). 
 
