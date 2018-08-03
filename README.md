@@ -131,7 +131,7 @@ What’s the fun in creating and training this model if you can’t use it to re
 
 So let’s upload a custom image.  
 
-First, take a picture of a number that you handwrite. First, take a picture of a number that you handwrite. Make sure you write your number with thick lines, and since all of the images in the MNIST data set are squares, be sure that your image is also a square. Then, upload this image to the C9 workspace, and name it something like “my_img.jpg”. 
+First, take a picture of a number that you handwrite. Make sure you write your number with thick lines, and since all of the images in the MNIST data set are squares, be sure that your image is also a square. Then, upload this image to the C9 workspace, and name it something like “my_img.jpg”. 
 
 Here's an example:
 
